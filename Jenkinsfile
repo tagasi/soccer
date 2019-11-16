@@ -55,7 +55,8 @@ pipeline {
     }
     post {
     always {
-        sh 'git --help'                
+            sh "chmod -R 777 ."
+            cleanWs()                
     }
   }
 }
