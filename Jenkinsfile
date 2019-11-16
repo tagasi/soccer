@@ -27,17 +27,7 @@ pipeline {
                 dir('api')
                 {
                     sh 'ls'
-                    sh 'npm install'
-
-                    pushToCloudFoundry(
-                        target: 'https://api.cf.eu10.hana.ondemand.com',
-                        organization: 'PlatformX Test & Play',
-                        cloudSpace: 'trial',
-                        credentialsId: 'cf_login_cred',
-                        manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
-                            manifestFile: 'manifest.yaml'
-                        ]
-                    )
+                    sh 'npm install'                    
                 }
                 
             }
