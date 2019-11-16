@@ -12,6 +12,11 @@ pipeline {
                     sh 'ls'
                     sh 'npm install'
                 }
+                dir('api')
+                {
+                    sh 'ls'
+                    sh 'npm install'
+                }
                 
             }
         }
