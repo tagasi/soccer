@@ -6,6 +6,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'npm -v' 
+                dir './db'
+                sh 'npm install'
             }
         }
         stage('Test') {
