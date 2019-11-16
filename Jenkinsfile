@@ -39,7 +39,7 @@ pipeline {
                         ]
                     )
                 }
-                deleteDir()   
+                
             }
         }
         stage('Test') {
@@ -53,4 +53,10 @@ pipeline {
             }
         }
     }
+    post {
+    always {
+        sh 'sudo rm -rf $WORKSPACE'
+        deleteDir()
+    }
+  }
 }
