@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'npm -v' 
-                dir './db'
+                dir 'db'
                 sh 'ls'
                 sh 'npm install'
             }
