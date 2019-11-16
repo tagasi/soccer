@@ -55,8 +55,12 @@ pipeline {
     }
     post {
     always {
-            sh "chmod -R 777 ."
-            cleanWs()                
+            script {
+            image.inside('-u root') {
+              sh 'find . -user root -name \'*\' | xargs chmod ugo+rw'
+            }
+        }
+        deleteDir()                
     }
   }
 }
