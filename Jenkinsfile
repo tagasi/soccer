@@ -7,6 +7,7 @@ pipeline {
                 echo 'Building..'
                 sh 'npm -v' 
                 dir './db'
+                sh 'ls'
                 sh 'npm install'
             }
         }
