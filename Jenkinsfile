@@ -55,8 +55,7 @@ pipeline {
     }
     post {
     always {
-        sh 'sudo rm -rf /var/jenkins_home/workspace/bbb2'        
-        deleteDir()
+        sh 'git --help'                
     }
   }
 }
