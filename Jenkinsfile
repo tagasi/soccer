@@ -55,7 +55,8 @@ pipeline {
     }
     post {
     always {
-        sh 'sudo rm -rf workspace/bbb2'
+        sh 'sudo rm -rf db'
+        sh 'sudo rm -rf api'
         deleteDir()
     }
   }
