@@ -7,8 +7,12 @@ pipeline {
                 echo 'Building..'
                 sh 'npm -v'                
                 sh 'ls'     
-                dir 'db'
-                sh 'ls'          
+                dir('db')
+                {
+                    sh 'ls'
+                    sh 'npm install'
+                }
+                
             }
         }
         stage('Test') {
