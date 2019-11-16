@@ -13,6 +13,13 @@ pipeline {
                 {
                     sh 'ls'
                     sh 'npm install'
+
+                    pushToCloudFoundry(
+                        target: 'api.local.pcfdev.io',
+                        organization: 'pcfdev-org',
+                        cloudSpace: 'pcfdev-space',
+                        credentialsId: 'pcfdev_user'
+                    )
                 }
                 dir('api')
                 {
