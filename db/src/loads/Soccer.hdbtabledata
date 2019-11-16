@@ -1,0 +1,94 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "Soccer.Country",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "country.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                	"id",
+					"name"                    
+                ]
+            }
+        },
+		{
+            "target_table": "Soccer.Tournament",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "tournament.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                	"id",
+					"countryid",
+					"name"
+                ]
+            }
+        },
+		{
+            "target_table": "Soccer.Team",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "team.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                	"id",					
+					"countryid",
+					"name"					
+                ]
+            }
+        },
+		{
+            "target_table": "Soccer.Season",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "season.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                	"id",
+					"tournamentid",
+					"countryid",
+					"name",
+					"isactive"
+                ]
+            }
+        },
+		{
+            "target_table": "Soccer.Event",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "event.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                	"IdEvent",
+					"countryid",
+					"seasonid",
+					"tournamentid",
+					"Round",
+					"Date",
+					"htid",
+					"atid",
+					"GameStatus",
+					"FTHG",
+					"FTAG",
+					"FTR",
+					"HTHG",
+					"HTAG",
+					"HTR",
+					"IsPlayed"
+                ]
+            }
+        }
+    ]
+}

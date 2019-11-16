@@ -1,0 +1,19 @@
+{
+    "welcomeFile": "index.html",
+    "authenticationMethod": "none",
+	"sessionTimeout": 120,
+    "routes": [        
+        {
+            "source": "/api(.*)",
+            "destination": "soccer-api",
+            "authenticationType": "none",
+            "csrfProtection": true
+        },
+		{
+		  "source": "^/(.*)",
+		  "localDir": "dist",
+          "authenticationType": "none",	  
+		  "cacheControl": "public, max-age=1000,must-revalidate"
+		}
+    ]
+}

@@ -1,0 +1,10 @@
+---
+
+applications:
+
+- name: soccer-db
+  memory: 256M
+  no-route: true
+  health-check-type: process
+  services:
+    - soccer-hdi

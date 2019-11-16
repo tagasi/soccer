@@ -1,0 +1,25 @@
+procedure  "GetFixtures" (
+	out RESULT "tt_results"
+	)
+as
+begin
+	RESULT = select c."name" as "Country"
+		,tour."name" as "Tournament"
+		,s."name" as "Season"
+		,"Date"
+		,ht."name" as "HomeTeam"
+		,atm."name" as "AwayTeam"
+		,e."FTHG"
+		,e."FTAG"
+		,e."HTHG"
+		,e."HTAG"
+	from "Soccer.Event" e
+		inner join "Soccer.Country" c on e."countryid"=c."id"
+		inner join "Soccer.Tournament" tour on e."tournamentid" = tour."id"
+		inner join "Soccer.Season" s on e."seasonid" = s."id"
+		inner join "Soccer.Team" as ht on e."htid" = ht."id"
+		inner join "Soccer.Team" as atm on e."atid" = atm."id"
+		where "IsPlayed" = 1
+	order by "Date" desc,c."name",tour."name"
+	limit 150;
+end;

@@ -1,0 +1,6 @@
+{
+    "role": {
+        "name": "PublicAccessObjects#",
+        "object_privileges": []
+    }
+}

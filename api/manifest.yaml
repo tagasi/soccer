@@ -1,0 +1,12 @@
+---
+
+applications:
+
+- name: soccer-api
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.6.40
+  stack: cflinuxfs3
+  host: soccer-api
+  domain: cfapps.eu10.hana.ondemand.com
+  memory: 256M
+  services:
+    - soccer-hdi

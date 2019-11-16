@@ -1,0 +1,12 @@
+TYPE "tt_results" AS TABLE (
+    "Country" NVARCHAR(500),
+    "Tournament" NVARCHAR(500),
+    "Season" NVARCHAR(500),
+    "Date" NVARCHAR(500),
+    "HomeTeam" NVARCHAR(500),
+    "AwayTeam" NVARCHAR(500),
+    "FTHG" NVARCHAR(500),
+    "FTAG" NVARCHAR(500),
+    "HTHG" NVARCHAR(500),
+    "HTAG" NVARCHAR(500)
+)
