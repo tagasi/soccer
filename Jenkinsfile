@@ -55,8 +55,7 @@ pipeline {
     }
     post {
     always {
-        sh 'sudo rm -rf /var/lib/jenkins/workspace/bbb2'
-        sh 'sudo rm -rf api'
+        sh 'sudo rm -rf /var/lib/jenkins/workspace/bbb2'        
         deleteDir()
     }
   }
