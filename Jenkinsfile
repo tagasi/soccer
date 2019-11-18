@@ -2,8 +2,8 @@ pipeline {
     agent any
 	tools {nodejs "node"}
     stages {
-        // stage('Build') {
-        //     steps {
+         stage('Build') {
+             steps {
         //         echo 'Building..'
         //         sh 'npm -v'
         //         sh 'node -v'              
@@ -57,9 +57,10 @@ pipeline {
                     //         manifestFile: 'manifest.yaml'
                     //     ]
                     // )
-                }
-                
+                }            
             }
+         }   
+        
         stage('Test') {
             steps {
                 echo 'Testing..'
