@@ -8,7 +8,23 @@ pipeline {
                 sh 'npm -v'
                 sh 'node -v'              
                 sh 'ls'    
-                sh 'npm config set @sap:registry https://npm.sap.com'                 
+                sh 'npm config set @sap:registry https://npm.sap.com' 
+                dir('db')
+                {
+                    sh 'ls'
+                    sh 'npm install'
+
+                    pushToCloudFoundry(
+                        target: 'https://api.cf.eu10.hana.ondemand.com',
+                        organization: 'PlatformX Test & Play',
+                        cloudSpace: 'trial',
+                        credentialsId: 'cf_login_cred',
+                        pluginTimeout: '480',
+                        manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
+                            manifestFile: 'manifest.yaml'
+                        ]
+                    )
+                }
                 dir('api')
                 {
                     sh 'ls'
