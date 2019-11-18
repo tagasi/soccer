@@ -53,11 +53,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
-        }
-    }
-    post {
-    always {
-                            
-    }
+        }    
   }
 }
