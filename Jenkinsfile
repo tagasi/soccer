@@ -19,7 +19,7 @@ pipeline {
                         organization: 'PlatformX Test & Play',
                         cloudSpace: 'trial',
                         credentialsId: 'cf_login_cred',
-                        pluginTimeout: 480,
+                        pluginTimeout: '480',
                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                             manifestFile: 'manifest.yaml'
                         ]
@@ -35,7 +35,7 @@ pipeline {
                         organization: 'PlatformX Test & Play',
                         cloudSpace: 'trial',
                         credentialsId: 'cf_login_cred',
-                        pluginTimeout: 480,
+                        pluginTimeout: '480',
                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                             manifestFile: 'manifest.yaml'
                         ]
@@ -57,12 +57,7 @@ pipeline {
     }
     post {
     always {
-            script {
-            image.inside('-u root') {
-              sh 'find . -user root -name \'*\' | xargs chmod ugo+rw'
-            }
-        }
-        deleteDir()                
+                            
     }
   }
 }
