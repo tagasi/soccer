@@ -42,7 +42,7 @@ pipeline {
                     )
                 }
 
-                dir('api')
+                dir('soccer-app')
                 {
                     sh 'ls'
                     sh 'npm install'
