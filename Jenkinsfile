@@ -19,6 +19,7 @@ pipeline {
                         organization: 'PlatformX Test & Play',
                         cloudSpace: 'trial',
                         credentialsId: 'cf_login_cred',
+                        pluginTimeout: 480,
                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                             manifestFile: 'manifest.yaml'
                         ]
@@ -34,6 +35,7 @@ pipeline {
                         organization: 'PlatformX Test & Play',
                         cloudSpace: 'trial',
                         credentialsId: 'cf_login_cred',
+                        pluginTimeout: 480,
                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                             manifestFile: 'manifest.yaml'
                         ]
