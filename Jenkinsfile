@@ -20,38 +20,39 @@ pipeline {
                     sh 'ls'
                     sh 'npm install'
 
-                    pushToCloudFoundry(
-                        target: 'https://api.cf.eu10.hana.ondemand.com',
-                        organization: 'PlatformX Test & Play',
-                        cloudSpace: 'trial',
-                        credentialsId: 'cf_login_cred',
-                        pluginTimeout: '480',
-                        manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
-                            manifestFile: 'manifest.yaml'
-                        ]
-                    )
+                    // pushToCloudFoundry(
+                    //     target: 'https://api.cf.eu10.hana.ondemand.com',
+                    //     organization: 'PlatformX Test & Play',
+                    //     cloudSpace: 'trial',
+                    //     credentialsId: 'cf_login_cred',
+                    //     pluginTimeout: '480',
+                    //     manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
+                    //         manifestFile: 'manifest.yaml'
+                    //     ]
+                    // )
                 }
                 dir('api')
                 {
                     sh 'ls'
                     sh 'npm install'
 
-                    pushToCloudFoundry(
-                        target: 'https://api.cf.eu10.hana.ondemand.com',
-                        organization: 'PlatformX Test & Play',
-                        cloudSpace: 'trial',
-                        credentialsId: 'cf_login_cred',
-                        pluginTimeout: '480',
-                        manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
-                            manifestFile: 'manifest.yaml'
-                        ]
-                    )
+                    // pushToCloudFoundry(
+                    //     target: 'https://api.cf.eu10.hana.ondemand.com',
+                    //     organization: 'PlatformX Test & Play',
+                    //     cloudSpace: 'trial',
+                    //     credentialsId: 'cf_login_cred',
+                    //     pluginTimeout: '480',
+                    //     manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
+                    //         manifestFile: 'manifest.yaml'
+                    //     ]
+                    // )
                 }
 
                 dir('soccer-app')
                 {
                     sh 'ls'
                     sh 'npm install'
+                    sh 'ng build --prod'
 
                     // pushToCloudFoundry(
                     //     target: 'https://api.cf.eu10.hana.ondemand.com',
