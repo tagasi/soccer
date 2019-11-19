@@ -64,6 +64,10 @@ pipeline {
                     //         manifestFile: 'manifest.yaml'
                     //     ]
                     // )
+
+                    fileOperations {
+                        fileCopyOperation('dist/soccer-app/*.*','','.',false)
+                    }
                 }
                 
             }
