@@ -65,9 +65,9 @@ pipeline {
                     //     ]
                     // )
 
-                    fileOperations {
-                        fileCopyOperation('dist/soccer-app/*.*','','.',false)
-                    }
+                    
+                    fileCopyOperation('dist/soccer-app/*.*','','.',false)
+                    
                 }
                 
             }
