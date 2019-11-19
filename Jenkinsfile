@@ -52,7 +52,7 @@ pipeline {
                 {
                     sh 'ls'
                     sh 'npm install'
-                    sh 'ng build --prod'
+                    sh 'ng build --prod '
 
                     // pushToCloudFoundry(
                     //     target: 'https://api.cf.eu10.hana.ondemand.com',
@@ -63,10 +63,7 @@ pipeline {
                     //     manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                     //         manifestFile: 'manifest.yaml'
                     //     ]
-                    // )
-
-                    
-                    fileCopyOperation('dist/soccer-app/*.*','','.',false)
+                    // )                    
                     
                 }
                 
