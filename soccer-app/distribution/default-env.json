@@ -1,0 +1,9 @@
+{
+  "destinations": [
+    {
+      "name": "boardflo-api-backend",
+      "url": "http://localhost:3000",
+      "forwardAuthToken": false
+    }
+  ]
+}
