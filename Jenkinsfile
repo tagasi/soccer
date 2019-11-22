@@ -8,7 +8,7 @@ pipeline {
                 sh 'npm -v'
                 sh 'node -v'              
                 sh 'ls'    
-                sh 'npm config set @sap:registry https://npm.sap.com' 
+                //sh 'npm config set @sap:registry https://npm.sap.com' 
                 sh 'npm install -g @angular/cli'
                 sh 'ng --version'
                 dir('web')
@@ -18,7 +18,7 @@ pipeline {
                 dir('db')
                 {
                     sh 'ls'
-                    sh 'npm install'
+                    sh 'npm ci'
 
                      pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
@@ -29,12 +29,12 @@ pipeline {
                          manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
                              manifestFile: 'manifest.yaml'
                          ]
-                     )
+                     )                     
                 }
                 dir('api')
                 {
                     sh 'ls'
-                    sh 'npm install'
+                    sh 'npm ci'
 
                      pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
@@ -51,7 +51,7 @@ pipeline {
                 dir('soccer-app')
                 {
                     sh 'ls'
-                    sh 'npm install'
+                    sh 'npm ci'
                     sh 'ng build --prod '                    
                 }
 
