@@ -74,6 +74,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo 'Running tests...'
                 dir('test')
                 {
                     sh 'ls'
