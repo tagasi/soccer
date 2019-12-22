@@ -5,6 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                dir('test')
+                {
+                    sh 'ls'
+                    sh 'java -jar jenkins.tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar'                                       
+                }
                 sh 'npm -v'
                 sh 'node -v'              
                 sh 'ls'    
