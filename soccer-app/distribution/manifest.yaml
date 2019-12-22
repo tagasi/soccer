@@ -1,0 +1,18 @@
+---
+
+applications:
+
+- name: soccer-web
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.6.40
+  stack: cflinuxfs3
+  host: soccer-web
+  domain: cfapps.eu10.hana.ondemand.com
+  memory: 256M
+  env:
+    OPTIMIZE_MEMORY: true
+    destinations: >
+      [
+        {"name":"soccer-api", "url":"https://soccer-api.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": false}
+      ]
+  services:
+      - soccer-uaa    
