@@ -61,20 +61,20 @@ pipeline {
                     sh 'ng build --prod '                    
                 }
 
-                dir('soccer-app/distribution')
-                {
-                     pushToCloudFoundry(
-                         target: 'https://api.cf.eu10.hana.ondemand.com',
-                         organization: 'PlatformX Test & Play',
-                         cloudSpace: 'trial',
-                         credentialsId: 'cf_login_cred',
-                         pluginTimeout: '480',
-                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
-                             manifestFile: 'manifest.yaml'
-                         ]
-                     )                    
+                // dir('soccer-app/distribution')
+                // {
+                //      pushToCloudFoundry(
+                //          target: 'https://api.cf.eu10.hana.ondemand.com',
+                //          organization: 'PlatformX Test & Play',
+                //          cloudSpace: 'trial',
+                //          credentialsId: 'cf_login_cred',
+                //          pluginTimeout: '480',
+                //          manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
+                //              manifestFile: 'manifest.yaml'
+                //          ]
+                //      )                    
                     
-                }
+                // }
                 
             }
         }
