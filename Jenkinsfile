@@ -74,7 +74,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                dir('test')
+                {
+                    sh 'ls'
+                    sh 'java -jar jenkins.tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar'                                       
+                }
             }
         }
         stage('Deploy') {
