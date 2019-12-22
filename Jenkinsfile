@@ -17,6 +17,7 @@ pipeline {
                 dir('test')
                 {
                     sh 'ls'
+                    sh 'ping -c 4 172.17.0.3'
                     sh 'java -jar jenkins.tests-0.0.1-SNAPSHOT-jar-with-dependencies.jar'                                       
                 }
             }
