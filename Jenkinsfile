@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'npm -v'
-                sh 'node -v'              
-                sh 'ls'    
+                //sh 'npm -v'
+                //sh 'node -v'              
+                //sh 'ls'    
                 //sh 'npm config set @sap:registry https://npm.sap.com' 
                 
                 // sh 'npm install -g @angular/cli'
