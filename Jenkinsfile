@@ -9,7 +9,7 @@ pipeline {
                 sh 'node -v'              
                 sh 'ls'    
                 //sh 'npm config set @sap:registry https://npm.sap.com' 
-                sh 'npm install -g @angular/cli'
+               /* sh 'npm install -g @angular/cli'
                 sh 'ng --version'
                 dir('web')
                 {
@@ -68,7 +68,7 @@ pipeline {
                          ]
                      )                    
                     
-                }
+                }*/
                 
             }
         }
