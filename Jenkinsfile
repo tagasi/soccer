@@ -16,13 +16,6 @@ pipeline {
                 sh 'npm install -g @angular/cli'
                 sh 'ng --version'
 
-                
-
-                dir('db-prod')
-                {
-                    sh 'ls'
-                }
-
                 dir('web')
                 {
                     sh 'rm -rf dist'
