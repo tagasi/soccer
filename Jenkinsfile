@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 
-                sh 'cp db-prod/manifest.yaml db/manifest.yaml'
+                //sh 'cp db-prod/manifest.yaml db/manifest.yaml'
                 
                 sh 'npm -v'
                 sh 'node -v'              
