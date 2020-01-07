@@ -5,6 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                
+                sh 'cp db-prod/test.txt db/test.txt'
+                
                 sh 'npm -v'
                 sh 'node -v'              
                 sh 'ls'    
@@ -13,7 +16,7 @@ pipeline {
                 sh 'npm install -g @angular/cli'
                 sh 'ng --version'
 
-                sh copy(file:"db-prod/test.txt", tofile:"db/test.txt")
+                
 
                 dir('db-prod')
                 {
