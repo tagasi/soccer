@@ -1,0 +1,37 @@
+---
+
+applications:
+
+- name: soccer-prod-db
+  path: ./db
+  memory: 256M
+  no-route: true
+  health-check-type: process
+  services:
+    - tagasi
+
+- name: soccer-prod-api
+  path: ./api
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.6.40
+  stack: cflinuxfs3
+  host: soccer-prod-api
+  domain: cfapps.eu10.hana.ondemand.com
+  memory: 256M
+  services:
+    - tagasi
+
+- name: soccer-prod-web
+  path: ./soccer-app/distribution
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.6.40
+  stack: cflinuxfs3
+  host: soccer-prod-web
+  domain: cfapps.eu10.hana.ondemand.com
+  memory: 256M
+  env:
+    OPTIMIZE_MEMORY: true
+    destinations: >
+      [
+        {"name":"soccer-api", "url":"https://soccer-prod-api.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": false}
+      ]
+  services:
+      - test-xsuaa

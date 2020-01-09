@@ -90,6 +90,17 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+
+                pushToCloudFoundry(
+                         target: 'https://api.cf.eu10.hana.ondemand.com',
+                         organization: 'S0013458965trial_trial',
+                         cloudSpace: 'dev',
+                         credentialsId: 'cf_login_cred',
+                         pluginTimeout: '480',
+                         manifestChoice: [ // optional... defaults to manifestFile: manifest.yml
+                             manifestFile: 'manifest.yaml'
+                         ]
+                     )
             }
         }    
   }

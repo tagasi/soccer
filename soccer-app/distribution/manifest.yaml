@@ -15,4 +15,4 @@ applications:
         {"name":"soccer-api", "url":"https://soccer-api.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": false}
       ]
   services:
-      - soccer-uaa    
+      - soccer-uaa
