@@ -14,7 +14,7 @@ pipeline {
                 sh 'npm config set @sap:registry https://npm.sap.com' 
                 dir('web')
                 {
-                     sh 'npm ci'
+                     sh 'npm install'
                      sh 'ng --version'
                    // sh 'rm -rf dist'
                 }
