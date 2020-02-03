@@ -13,7 +13,7 @@ pipeline {
                 sh 'ls'    
                 sh 'npm config set @sap:registry https://npm.sap.com' 
                 
-                sh 'npm install -g @angular/cli'
+                sh 'npm install -g @angular/cli@6.1.1'
                 sh 'ng --version'
 
                 dir('web')
