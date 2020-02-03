@@ -9,11 +9,13 @@ pipeline {
                 //sh 'npm -v'
                 //sh 'node -v'              
                 //sh 'ls'    
-                sh 'npm install @angular/cli'
-                sh 'ng --version'
+               // sh 'npm install @angular/cli'
+               // sh 'ng --version'
                 sh 'npm config set @sap:registry https://npm.sap.com' 
                 dir('web')
                 {
+                     sh 'npm ci'
+                     sh 'ng --version'
                    // sh 'rm -rf dist'
                 }
                 dir('db')
