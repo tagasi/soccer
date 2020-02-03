@@ -7,7 +7,7 @@
     "@sap/approuter": "4.0.1"
   },
   "devDependencies": {
-    "@angular/cli" : "^6.0.0"
+    "@angular/cli" : "8.3.24"
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js"
