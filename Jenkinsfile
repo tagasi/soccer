@@ -5,17 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                
                 //sh 'cp db-prod/manifest.yaml db/manifest.yaml'
-                
-                sh 'npm -v'
-                sh 'node -v'              
-                sh 'ls'    
-                sh 'npm config set @sap:registry https://npm.sap.com' 
-                
-                sh 'npm install -g @angular/cli@latest'
+                //sh 'npm -v'
+                //sh 'node -v'              
+                //sh 'ls'    
+                sh 'npm install -g @angular/cli'
                 sh 'ng --version'
-
+                sh 'npm config set @sap:registry https://npm.sap.com' 
                 dir('web')
                 {
                    // sh 'rm -rf dist'
