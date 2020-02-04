@@ -1,14 +1,7 @@
 pipeline {
     agent any
 	tools {nodejs "node"}
-    stages {
-        stage('Prepare') {
-            steps {
-                sh 'npm install @angular/cli@6.0.0'
-                sh "npm install -g yarn"
-                sh "yarn install"
-            }            
-        }
+    stages {        
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -16,8 +9,8 @@ pipeline {
                 //sh 'npm -v'
                 //sh 'node -v'              
                 //sh 'ls'    
-                sh 'npm install -g @angular/cli@6.0.0'
-               // sh 'ng --version'
+               // sh 'npm install -g @angular/cli@6.0.0'
+                sh 'ng --version'
                 sh 'npm config set @sap:registry https://npm.sap.com' 
                 dir('web')
                 {
