@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
+                sh 'npm install @angular/cli@6.0.0'
                 sh "npm install -g yarn"
                 sh "yarn install"
             }            
