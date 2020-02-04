@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 //sh 'cp db-prod/manifest.yaml db/manifest.yaml'
-                //sh 'npm -v'
+                sh 'npm -v'
                 //sh 'node -v'              
                 //sh 'ls'    
                // sh 'npm install -g @angular/cli@6.0.0'
