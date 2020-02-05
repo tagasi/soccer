@@ -1,12 +1,12 @@
 pipeline {
     agent any
-	tools {nodejs "node"}
+	//tools {nodejs "node"}
     stages {        
         stage('Build') {
             steps {
                 echo 'Building..'
                 //sh 'cp db-prod/manifest.yaml db/manifest.yaml'
-                //sh 'npm -v'
+                sh 'npm -v'
                 //sh 'node -v'              
                 //sh 'ls'    
                // sh 'npm install -g @angular/cli@6.0.0'
@@ -91,7 +91,7 @@ pipeline {
 
                 pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
-                         organization: 'S0013458965trial_trial',
+                         organization: 's0013458965trial',
                          cloudSpace: 'dev',
                          credentialsId: 'cf_login_cred',
                          pluginTimeout: '480',
