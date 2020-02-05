@@ -12,6 +12,14 @@ pipeline {
                // sh 'npm install -g @angular/cli@6.0.0'
                 sh 'ng --version'
                 sh 'npm config set @sap:registry https://npm.sap.com' 
+
+                dir('soccer-app')
+                {
+                    sh 'ls'
+                    sh 'npm install'
+                    sh 'ng build --prod '                    
+                }
+
                 dir('web')
                 {
                      //sh 'npm install'
@@ -51,12 +59,12 @@ pipeline {
                      )
                 }
 
-                dir('soccer-app')
+                /*dir('soccer-app')
                 {
                     sh 'ls'
                     sh 'npm install'
                     sh 'ng build --prod '                    
-                }
+                }*/
 
                 dir('soccer-app/distribution')
                 {
