@@ -54,7 +54,7 @@ pipeline {
                 dir('soccer-app')
                 {
                     sh 'ls'
-                    sh 'yarn install'
+                    sh 'npm install'
                     sh 'ng build --prod '                    
                 }
 
