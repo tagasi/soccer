@@ -91,7 +91,7 @@ pipeline {
 
                 pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
-                         organization: 'S0013458965trial_trial',
+                         organization: 's0013458965trial',
                          cloudSpace: 'dev',
                          credentialsId: 'cf_login_cred',
                          pluginTimeout: '480',
