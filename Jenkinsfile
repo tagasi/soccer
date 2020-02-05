@@ -21,7 +21,7 @@ pipeline {
                 dir('db')
                 {
                     sh 'ls'
-                    sh 'npm ci'
+                    sh 'npm install'
 
                      pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
@@ -37,7 +37,7 @@ pipeline {
                 dir('api')
                 {
                     sh 'ls'
-                    sh 'npm ci'
+                    sh 'npm install'
 
                      pushToCloudFoundry(
                          target: 'https://api.cf.eu10.hana.ondemand.com',
@@ -54,7 +54,7 @@ pipeline {
                 dir('soccer-app')
                 {
                     sh 'ls'
-                    sh 'npm ci'
+                    sh 'npm install'
                     sh 'ng build --prod '                    
                 }
 
